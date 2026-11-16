@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#6d4cff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>Belajar Pintar</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<header class="topbar">
+  <div>
+    <div class="eyebrow">BELAJAR PINTAR 📚</div>
+    <h1>Halo, Pelajar! 👋</h1>
+    <p>Siap belajar dan jadi lebih pintar hari ini?</p>
+  </div>
+  <button class="avatar" onclick="showPage('profil')">FP</button>
+</header>
+
+<main>
+<section id="beranda" class="page active">
+  <div class="hero">
+    <div>
+      <span class="pill">SEMANGAT BELAJAR</span>
+      <h2>Belajar jadi lebih seru.</h2>
+      <p>Materi, kuis, jadwal, dan progres belajar dalam satu aplikasi.</p>
+      <button class="primary" onclick="showPage('materi')">Mulai belajar →</button>
+    </div>
+    <div class="hero-book">📖</div>
+  </div>
+
+  <div class="section-title"><h3>Fitur utama</h3><span>Semua</span></div>
+  <div class="grid">
+    <button class="card blue" onclick="showPage('materi')"><span class="icon">📚</span><b>Materi Pelajaran</b><small>Matematika, IPA, IPS, Bahasa Indonesia</small></button>
+    <button class="card green" onclick="showPage('kuis')"><span class="icon">🧠</span><b>Kuis Pintar</b><small>Latihan soal dan nilai otomatis</small></button>
+    <button class="card yellow" onclick="showPage('jadwal')"><span class="icon">🗓️</span><b>Jadwal Sekolah</b><small>Catatan jadwal dan tugas</small></button>
+    <button class="card purple" onclick="showPage('prestasi')"><span class="icon">🏆</span><b>Poin Prestasi</b><small>Kumpulkan poin dari belajar</small></button>
+  </div>
+
+  <div class="section-title"><h3>Progres hari ini</h3><span id="progressText">0%</span></div>
+  <div class="progress-wrap"><div id="progressBar"></div></div>
+  <div class="tip">💡 <b>Tips:</b> Belajar 25 menit, istirahat 5 menit, lalu lanjut lagi.</div>
+</section>
+
+<section id="materi" class="page">
+  <div class="page-head"><button class="back" onclick="showPage('beranda')">←</button><div><h2>Materi Pelajaran</h2><p>Pilih pelajaran untuk mulai membaca.</p></div></div>
+  <div id="subjectList"></div>
+</section>
+
+<section id="kuis" class="page">
+  <div class="page-head"><button class="back" onclick="showPage('beranda')">←</button><div><h2>Kuis Pintar</h2><p>Latihan singkat dengan nilai otomatis.</p></div></div>
+  <div id="quizBox" class="quiz"></div>
+</section>
+
+<section id="jadwal" class="page">
+  <div class="page-head"><button class="back" onclick="showPage('beranda')">←</button><div><h2>Jadwal Sekolah</h2><p>Contoh jadwal yang bisa kamu ubah di kode.</p></div></div>
+  <div class="schedule" id="scheduleList"></div>
+</section>
+
+<section id="prestasi" class="page">
+  <div class="page-head"><button class="back" onclick="showPage('beranda')">←</button><div><h2>Poin Prestasi</h2><p>Catat perkembangan belajarmu.</p></div></div>
+  <div class="points-card"><div class="trophy">🏆</div><div><small>Total poin</small><strong id="points">120</strong><span>poin belajar</span></div></div>
+  <div class="achievement"><b>🌟 Konsisten belajar</b><p>Belajar minimal 3 hari berturut-turut.</p></div>
+  <div class="achievement"><b>🧠 Kuis aktif</b><p>Selesaikan kuis untuk mendapatkan poin.</p></div>
+</section>
+
+<section id="profil" class="page">
+  <div class="page-head"><button class="back" onclick="showPage('beranda')">←</button><div><h2>Profil</h2><p>Data pelajar.</p></div></div>
+  <div class="profile">
+    <div class="big-avatar">FP</div><h3>Filza</h3><p>Pelajar • Belajar Pintar</p>
+    <div class="profile-row"><span>📚 Materi selesai</span><b id="doneCount">0</b></div>
+    <div class="profile-row"><span>🧠 Kuis dikerjakan</span><b id="quizCount">0</b></div>
+    <div class="profile-row"><span>🏆 Poin</span><b id="profilePoints">120</b></div>
+  </div>
+</section>
+</main>
+
+<nav class="bottom-nav">
+<button class="nav active" data-page="beranda" onclick="showPage('beranda')">⌂<span>Beranda</span></button>
+<button class="nav" data-page="materi" onclick="showPage('materi')">📚<span>Materi</span></button>
+<button class="nav" data-page="kuis" onclick="showPage('kuis')">🧠<span>Kuis</span></button>
+<button class="nav" data-page="jadwal" onclick="showPage('jadwal')">🗓️<span>Jadwal</span></button>
+<button class="nav" data-page="profil" onclick="showPage('profil')">👤<span>Profil</span></button>
+</nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
