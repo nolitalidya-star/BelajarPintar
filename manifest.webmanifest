@@ -1,0 +1,12 @@
+{
+  "name":"Belajar Pintar",
+  "short_name":"Belajar Pintar",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#6d4cff",
+  "description":"Aplikasi belajar untuk pelajar.",
+  "icons":[
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
